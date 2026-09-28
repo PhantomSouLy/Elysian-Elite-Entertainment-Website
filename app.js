@@ -46,7 +46,7 @@
 
   function openTalent(id){
     const t = getTalent(id); if(!t) return;
-    const rows = Object.entries(t.services).slice(0,8).map(([key,val]) => `<div class="service-row"><span>${esc(D.serviceLabels[key]?.[0] || key)}</span><span class="service-state ${val}">${val==='available'?'Available':'Request Only'}</span></div>`).join('');
+    const rows = Object.entries(t.services).slice(0,8).map(([key,val]) => `<div class="service-row"><span>${esc(D.serviceLabels[key]?.[0] || key)}</span><span class="service-state ${val}">${val==='available'?'Elérhető':'Külön jóváhagyással'}</span></div>`).join('');
     $('#talentModalContent').innerHTML = `<div class="talent-profile">
       <div class="profile-image">${imgMarkup(t)}</div>
       <div class="profile-copy">
@@ -54,7 +54,7 @@
         <p class="profile-desc">${esc(t.description)}</p>
         <div class="profile-facts"><div><small>Availability</small>${esc(t.availability)}</div><div><small>Languages</small>${esc(t.languages.join(' / '))}</div><div><small>Booking Level</small>${esc(t.level)}</div><div><small>Security</small>EEE Protected</div></div>
         <div class="service-preview"><h4>Service Preferences</h4>${rows}</div>
-        <button class="btn btn-gold" id="bookTalentDirect">Book ${esc(t.name.split(' ')[0])}</button>
+        <button class="btn btn-gold" id="bookTalentDirect">${esc(t.name.split(' ')[0])} foglalása</button>
       </div></div>`;
     const modal = $('#talentModal'); modal.showModal();
     $('#bookTalentDirect').addEventListener('click',()=>{modal.close();openBooking(id);});
@@ -73,7 +73,7 @@
   function choiceMarkup(name, key, label, status, type='checkbox'){
     if(!status) return '';
     const isReq = status==='request';
-    return `<label class="choice"><input type="${type}" name="${name}" value="${key}"><strong>${esc(label[0])}</strong><small>${esc(label[1]||'')}</small>${isReq?'<em>Request only</em>':''}</label>`;
+    return `<label class="choice"><input type="${type}" name="${name}" value="${key}"><strong>${esc(label[0])}</strong><small>${esc(label[1]||'')}</small>${isReq?'<em>Külön jóváhagyással</em>':''}</label>`;
   }
 
   function renderExperienceChoices(){
@@ -122,10 +122,10 @@
   function renderReview(){
     const o=serializeForm(), t=getTalent(o.talent);
     $('#bookingReview').innerHTML = `
-      <div class="review-section"><h4>Talent & Experience</h4><p><b>Talent:</b> ${esc(t?.name||'—')}</p><p><b>Services:</b> ${esc(labelList(o.services,D.serviceLabels))}</p><p><b>Interaction:</b> ${esc(D.interactionLabels[o.interaction]?.[0]||'—')}</p><p><b>Guests:</b> ${esc(D.guestLabels[o.guestConfig]?.[0]||'—')}</p><p><b>Request:</b> ${esc(o.requestDetails||'—')}</p></div>
-      <div class="review-section"><h4>Event</h4><p><b>Date:</b> ${esc(o.date||'—')} ${esc(o.time||'')}</p><p><b>Duration:</b> ${esc(o.duration||'—')}</p><p><b>Type:</b> ${esc(o.eventType||'—')}</p><p><b>Venue:</b> ${esc(o.venueName||'—')}</p><p><b>Address:</b> ${esc(o.venueAddress||'—')}</p><p><b>Budget:</b> ${esc(o.budget||'—')}</p></div>
-      <div class="review-section"><h4>Client</h4><p><b>Name:</b> ${esc(o.clientName||'—')}</p><p><b>Contact:</b> ${esc(o.clientPhone||'—')}</p><p><b>Type:</b> ${esc(o.clientType||'—')}</p><p><b>Address:</b> ${esc(o.clientType==='company'?(o.companyAddress||'—'):(o.homeAddress||'—'))}</p></div>
-      <div class="review-section"><h4>EEE Notes</h4><p>${esc(o.eventDescription||o.clientNotes||'Nincs külön megjegyzés.')}</p><p><b>Security:</b> ${esc(o.security||'—')}</p><p><b>Transport:</b> ${esc(o.transport||'—')}</p></div>`;
+      <div class="review-section"><h4>Talent és szolgáltatások</h4><p><b>Talent:</b> ${esc(t?.name||'—')}</p><p><b>Szolgáltatások:</b> ${esc(labelList(o.services,D.serviceLabels))}</p><p><b>Kapcsolati szint:</b> ${esc(D.interactionLabels[o.interaction]?.[0]||'—')}</p><p><b>Vendégek:</b> ${esc(D.guestLabels[o.guestConfig]?.[0]||'—')}</p><p><b>Egyedi kérés:</b> ${esc(o.requestDetails||'—')}</p></div>
+      <div class="review-section"><h4>Esemény</h4><p><b>Dátum:</b> ${esc(o.date||'—')} ${esc(o.time||'')}</p><p><b>Időtartam:</b> ${esc(o.duration||'—')}</p><p><b>Típus:</b> ${esc(o.eventType||'—')}</p><p><b>Helyszín:</b> ${esc(o.venueName||'—')}</p><p><b>Cím:</b> ${esc(o.venueAddress||'—')}</p><p><b>Költségkeret:</b> ${esc(o.budget||'—')}</p></div>
+      <div class="review-section"><h4>Ügyfél</h4><p><b>Név:</b> ${esc(o.clientName||'—')}</p><p><b>Elérhetőség:</b> ${esc(o.clientPhone||'—')}</p><p><b>Típus:</b> ${esc(o.clientType||'—')}</p><p><b>Cím:</b> ${esc(o.clientType==='company'?(o.companyAddress||'—'):(o.homeAddress||'—'))}</p></div>
+      <div class="review-section"><h4>EEE megjegyzések</h4><p>${esc(o.eventDescription||o.clientNotes||'Nincs külön megjegyzés.')}</p><p><b>Biztonság:</b> ${esc(o.security||'—')}</p><p><b>Szállítás:</b> ${esc(o.transport||'—')}</p></div>`;
   }
 
   function openBooking(talentId=null, order=null){
@@ -183,11 +183,11 @@
     state.editData = null;
     $('#bookingModal').close();
     openDrawer();
-    if(!draft) alert('A Private Booking Request elmentve.');
+    if(!draft) alert('A privát foglalási kérelem elmentve.');
   }
 
   $('#bookingForm').addEventListener('submit',e=>{e.preventDefault();if(validateStep())saveOrder('Submitted');});
-  $('#contactForm').addEventListener('submit',e=>{e.preventDefault();alert('Az üzenet elkészült. Backend csatlakoztatása után innen küldhető majd el.');});
+  $('#contactForm').addEventListener('submit',e=>{e.preventDefault();alert('Az üzenet elkészült. A közös háttérrendszer csatlakoztatása után innen küldhető majd el.');});
 
   function openDrawer(){ $('#modalOverlay').hidden=false; $('#ordersDrawer').classList.add('open'); $('#ordersDrawer').setAttribute('aria-hidden','false'); renderOrders(); }
   function closeDrawer(){ $('#modalOverlay').hidden=true; $('#ordersDrawer').classList.remove('open'); $('#ordersDrawer').setAttribute('aria-hidden','true'); }
@@ -198,16 +198,16 @@
   function renderOrders(){
     const orders=readOrders(); const list=$('#ordersList');
     $('#orderCount').hidden=!orders.length; $('#orderCount').textContent=orders.length;
-    if(!orders.length){list.innerHTML='<div class="empty-state"><strong>Nincs még megrendelés.</strong>Az első Private Booking Request itt fog megjelenni.</div>';return;}
+    if(!orders.length){list.innerHTML='<div class="empty-state"><strong>Nincs még megrendelés.</strong>Az első privát foglalási kérelem itt fog megjelenni.</div>';return;}
     list.innerHTML=''; const tpl=$('#orderTemplate');
     orders.forEach(order=>{
       const node=tpl.content.firstElementChild.cloneNode(true); const t=getTalent(order.data.talent);
       node.querySelector('.order-id').textContent=order.id;
-      node.querySelector('.order-title').textContent=t?.name||'Unknown Talent';
-      node.querySelector('.status-pill').textContent=order.status;
+      node.querySelector('.order-title').textContent=t?.name||'Ismeretlen Talent';
+      node.querySelector('.status-pill').textContent=order.status==='Draft'?'Piszkozat':order.status==='Submitted'?'Beküldve':order.status;
       node.querySelector('.order-meta').innerHTML=`${esc(order.data.date||'Nincs dátum')} · ${esc(order.data.eventType||'Nincs eseménytípus')}<br>${esc(order.data.clientName||'Nincs kliensnév')} · ${esc(order.data.budget||'')}`;
       node.querySelector('.order-details').innerHTML=`
-        <div><b>Talent:</b> ${esc(t?.name||'—')}</div><div><b>Services:</b> ${esc(labelList(order.data.services,D.serviceLabels))}</div><div><b>Interaction:</b> ${esc(D.interactionLabels[order.data.interaction]?.[0]||'—')}</div><div><b>Guests:</b> ${esc(D.guestLabels[order.data.guestConfig]?.[0]||'—')}</div><div><b>Event:</b> ${esc(order.data.eventType||'—')} · ${esc(order.data.date||'—')} ${esc(order.data.time||'')}</div><div><b>Venue:</b> ${esc(order.data.venueName||'—')} — ${esc(order.data.venueAddress||'—')}</div><div><b>Client:</b> ${esc(order.data.clientName||'—')} · ${esc(order.data.clientPhone||'—')}</div><div><b>Address:</b> ${esc(order.data.clientType==='company'?(order.data.companyAddress||'—'):(order.data.homeAddress||'—'))}</div><div><b>Request:</b> ${esc(order.data.requestDetails||'—')}</div><div><b>Event notes:</b> ${esc(order.data.eventDescription||'—')}</div><div><b>Created:</b> ${esc(fmtDate(order.createdAt))}</div>`;
+        <div><b>Talent:</b> ${esc(t?.name||'—')}</div><div><b>Szolgáltatások:</b> ${esc(labelList(order.data.services,D.serviceLabels))}</div><div><b>Kapcsolati szint:</b> ${esc(D.interactionLabels[order.data.interaction]?.[0]||'—')}</div><div><b>Vendégek:</b> ${esc(D.guestLabels[order.data.guestConfig]?.[0]||'—')}</div><div><b>Esemény:</b> ${esc(order.data.eventType||'—')} · ${esc(order.data.date||'—')} ${esc(order.data.time||'')}</div><div><b>Helyszín:</b> ${esc(order.data.venueName||'—')} — ${esc(order.data.venueAddress||'—')}</div><div><b>Ügyfél:</b> ${esc(order.data.clientName||'—')} · ${esc(order.data.clientPhone||'—')}</div><div><b>Cím:</b> ${esc(order.data.clientType==='company'?(order.data.companyAddress||'—'):(order.data.homeAddress||'—'))}</div><div><b>Egyedi kérés:</b> ${esc(order.data.requestDetails||'—')}</div><div><b>Esemény megjegyzései:</b> ${esc(order.data.eventDescription||'—')}</div><div><b>Létrehozva:</b> ${esc(fmtDate(order.createdAt))}</div>`;
       node.querySelector('.edit-order').addEventListener('click',()=>{closeDrawer();openBooking(order.data.talent,order);});
       node.querySelector('.delete-order').addEventListener('click',()=>{if(confirm('Törlöd ezt a megrendelést?'))writeOrders(readOrders().filter(x=>x.id!==order.id));});
       list.appendChild(node);

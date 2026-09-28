@@ -1,16 +1,6 @@
-EEE WEBSITE UPDATE v3 — Internal Staff Area
+EEE v4 magyarosított frissítés
 
-Overwrite these files in the repository root:
-- index.html
-- styles.css
-- data.js
-- README.md (optional but recommended)
-
-Do NOT delete your existing assets/ folder, logo.png or app.js.
-
-New menu:
-EEE Tagok > Személyi Testőrök
-EEE Tagok > Talent Lányok
-
-No login/auth was added by request. The pages are marked INTERNAL / STAFF ONLY only as RP presentation.
-Airi Shimizu has no special featured styling; she uses the same Talent card/profile system as everyone else.
+1. Másold a ZIP tartalmából az index.html, styles.css, data.js és app.js fájlokat a repo gyökerébe.
+2. Írd felül a régieket.
+3. Az assets mappát és a logo.png-t hagyd változatlanul.
+4. Ctrl + F5.
