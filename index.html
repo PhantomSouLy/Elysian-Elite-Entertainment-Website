@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="Elysian Elite Entertainment — Elite Talent Management & Private Hospitality Division" />
+  <title>EEE — Elysian Elite Entertainment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="EEE főoldal">
+      <img src="logo.png" alt="EEE" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+      <span class="brand-fallback"><strong>EEE</strong><small>Elysian Elite Entertainment</small></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Fő navigáció">
+      <a href="#home" data-nav>Főmenü</a>
+      <a href="#about" data-nav>Kik vagyunk</a>
+      <a href="#talents" data-nav>Talent Hölgyek</a>
+      <a href="#pricing" data-nav>Árak</a>
+      <a href="#rules" data-nav>Szabályzat</a>
+      <a href="#contact" data-nav>Elérhetőség</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn btn-gold btn-compact" id="openBookingTop">Private Booking</button>
+      <button class="profile-button" id="profileButton" aria-label="Megrendelések">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.25 4.25 0 1 0 0-8.5 4.25 4.25 0 0 0 0 8.5Zm0 2c-4.35 0-7.75 2.34-7.75 5.25 0 .69.56 1.25 1.25 1.25h13c.69 0 1.25-.56 1.25-1.25C19.75 16.34 16.35 14 12 14Z"/></svg>
+        <span class="order-count" id="orderCount" hidden>0</span>
+      </button>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Menü">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="section hero-section active-section">
+      <div class="hero-orb orb-one"></div>
+      <div class="hero-orb orb-two"></div>
+      <div class="hero-content container">
+        <p class="eyebrow">Elite Talent Management & Private Hospitality Division</p>
+        <h1>Where Elegance<br><span>Meets Exclusivity.</span></h1>
+        <p class="hero-copy">Los Santos exkluzív talent- és private hospitality szolgáltatása azok számára, akik a diszkrécióból, megjelenésből és személyes figyelemből nem hajlandók engedni.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-gold" href="#talents">Explore Our Talents</a>
+          <button class="btn btn-outline" id="openBookingHero">Private Booking</button>
+        </div>
+        <div class="hero-proof">
+          <div><strong>Elite</strong><span>válogatott Talentek</span></div>
+          <div><strong>Private</strong><span>személyre szabott foglalás</span></div>
+          <div><strong>Protected</strong><span>EEE security háttér</span></div>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">EEE</div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container split-layout">
+        <div>
+          <p class="eyebrow">The Elysian Standard</p>
+          <h2>Nem egy hagyományos közvetítőügynökség.</h2>
+        </div>
+        <div class="lead-copy">
+          <p>Az Elysian Elite Entertainment válogatott Talenteket képvisel, akik személyre szabott társasági, rendezvény- és privát entertainment szolgáltatásokat biztosítanak Los Santos prémium ügyfélköre számára.</p>
+          <p>Az EEE a Talentek számára professzionális menedzsmentet, stylingot, lakhatási támogatást, közlekedést és biztonsági hátteret biztosíthat. Az ügyfél pedig nem egy személyt „vásárol”: időt és előre egyeztetett szolgáltatást foglal egy önálló Talenttől.</p>
+        </div>
+      </div>
+
+      <div class="container values-grid">
+        <article class="value-card"><span>01</span><h3>Discretion</h3><p>Ügyfél- és Talent-információk bizalmas kezelése, privát foglalási folyamat.</p></article>
+        <article class="value-card"><span>02</span><h3>Protection</h3><p>EEE által felügyelt találkozók, helyszín- és ügyfélbiztonsági protokoll.</p></article>
+        <article class="value-card"><span>03</span><h3>Exclusivity</h3><p>Korlátozott számú, gondosan kiválasztott Talent és személyre szabott ajánlatok.</p></article>
+        <article class="value-card"><span>04</span><h3>Choice</h3><p>Minden Talent saját maga határozza meg az általa vállalt kategóriákat és személyes határokat.</p></article>
+      </div>
+
+      <div class="container statement-card">
+        <span>EEE PRINCIPLE</span>
+        <blockquote>Every Talent. Her own boundaries. Her own experience.</blockquote>
+      </div>
+    </section>
+
+    <section id="talents" class="section">
+      <div class="container section-heading">
+        <div><p class="eyebrow">Our Talents</p><h2>Curated. Distinct. Exceptional.</h2></div>
+        <p>Profilonként eltérő szolgáltatások és határok. A foglalásban kizárólag az adott Talent által engedélyezett opciók választhatók.</p>
+      </div>
+      <div class="container talent-grid" id="talentGrid"></div>
+    </section>
+
+    <section id="pricing" class="section">
+      <div class="container section-heading">
+        <div><p class="eyebrow">Private Booking</p><h2>Transparent minimums.<br>Personalized final pricing.</h2></div>
+        <p>Az ár a Talent státuszától, a foglalás hosszától, helyszínétől, kategóriájától, biztonsági besorolásától és egyedi igényeitől függ.</p>
+      </div>
+      <div class="container pricing-grid">
+        <article class="price-card"><small>Social Booking</small><strong>From $25,000</strong><p>Társasági események, vacsora, kísérő partner, üzleti és privát rendezvények.</p></article>
+        <article class="price-card featured"><small>Private Entertainment</small><strong>From $35,000</strong><p>Privát tánc, tematikus performance, zártkörű party entertainment.</p></article>
+        <article class="price-card"><small>Elite Private Event</small><strong>From $50,000</strong><p>Vinewood villa, yacht, penthouse, casino, exkluzív vagy hosszabb események.</p></article>
+        <article class="price-card"><small>Adult / Exclusive</small><strong>Private Quotation</strong><p>Kizárólag az adott Talent által engedélyezett privát kategóriák és külön kérés alapján.</p></article>
+        <article class="price-card"><small>Overnight / Extended</small><strong>Private Quotation</strong><p>Hosszabb időtartamú, több helyszínes vagy overnight foglalás.</p></article>
+        <article class="price-card"><small>Corporate / Custom</small><strong>Custom Contract</strong><p>Céges rendezvények, több Talent, hospitality és egyedi eseménycsomagok.</p></article>
+      </div>
+      <div class="container pricing-note">Final pricing is displayed before confirmation. A request elküldése nem jelent automatikus elfogadást.</div>
+    </section>
+
+    <section id="rules" class="section">
+      <div class="container section-heading">
+        <div><p class="eyebrow">Code of Conduct</p><h2>Luxury requires respect.</h2></div>
+        <p>Az EEE biztonságos és diszkrét környezetet tart fenn minden Talent és ügyfél számára.</p>
+      </div>
+      <div class="container rules-list">
+        <article><span>01</span><div><h3>Respect the Talent</h3><p>Minden Talent maga határozza meg személyes és szakmai határait.</p></div></article>
+        <article><span>02</span><div><h3>Consent Can Change</h3><p>Az előzetes elfogadás nem szünteti meg a Talent jogát egy szolgáltatás módosítására vagy megszakítására.</p></div></article>
+        <article><span>03</span><div><h3>No Unauthorized Recording</h3><p>Privát eseményen fénykép vagy videó csak külön engedéllyel készíthető.</p></div></article>
+        <article><span>04</span><div><h3>Confidentiality</h3><p>Ügyfelek, Talentek, helyszínek és privát események információi bizalmasak.</p></div></article>
+        <article><span>05</span><div><h3>Security</h3><p>Az EEE fenntartja a jogot ügyfelek, helyszínek és eseménykörülmények ellenőrzésére.</p></div></article>
+        <article><span>06</span><div><h3>Zero Tolerance</h3><p>Erőszak, fenyegetés vagy a Talent határainak megsértése az esemény azonnali megszakítását és tiltólistát eredményezhet.</p></div></article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">Private Client Services</p>
+          <h2>Contact Elysian.</h2>
+          <p class="lead-copy">Booking & Client Relations · Talent Management · Corporate Events · Security & Confidential Matters</p>
+          <div class="contact-details">
+            <div><small>Client Relations</small><strong>private@elysian-elite.ls</strong></div>
+            <div><small>Office</small><strong>Los Santos, San Andreas</strong></div>
+            <div><small>Availability</small><strong>By appointment only</strong></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label>Név<input type="text" name="name" required></label>
+          <label>Cég / Private Client<input type="text" name="company"></label>
+          <label>Elérhetőség<input type="text" name="contact" required></label>
+          <label>Tárgy<input type="text" name="subject" required></label>
+          <label class="full">Üzenet<textarea name="message" rows="5" required></textarea></label>
+          <button class="btn btn-gold full" type="submit">Contact Elysian</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>EEE</strong><span>Elysian Elite Entertainment</span></div>
+      <p>Elite Talent Management & Private Hospitality Division</p>
+      <small>Where Elegance Meets</small>
+    </div>
+  </footer>
+
+  <div class="overlay" id="modalOverlay" hidden></div>
+
+  <aside class="drawer" id="ordersDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div><p class="eyebrow">Private Client</p><h2>My Requests</h2></div>
+      <button class="icon-button" data-close-drawer aria-label="Bezárás">×</button>
+    </div>
+    <div class="drawer-toolbar">
+      <button class="btn btn-gold" id="newOrderFromDrawer">New Request</button>
+      <button class="text-button" id="clearOrders">Összes törlése</button>
+    </div>
+    <div class="orders-list" id="ordersList"></div>
+  </aside>
+
+  <dialog class="talent-modal" id="talentModal">
+    <button class="modal-close" id="closeTalentModal" aria-label="Bezárás">×</button>
+    <div id="talentModalContent"></div>
+  </dialog>
+
+  <dialog class="booking-modal" id="bookingModal">
+    <div class="booking-shell">
+      <div class="booking-head">
+        <div><p class="eyebrow">EEE Private Booking</p><h2>Private Booking Request</h2></div>
+        <button class="modal-close static" id="closeBooking" aria-label="Bezárás">×</button>
+      </div>
+
+      <div class="booking-progress" id="bookingProgress">
+        <span class="active">01 Talent</span><span>02 Experience</span><span>03 Event</span><span>04 Client</span><span>05 Review</span>
+      </div>
+
+      <form id="bookingForm">
+        <section class="booking-step active" data-step="1">
+          <div class="step-title"><small>STEP 01</small><h3>Choose your Talent</h3><p>Válaszd ki, kinek küldöd a privát foglalási kérelmet.</p></div>
+          <div class="booking-talent-grid" id="bookingTalentGrid"></div>
+        </section>
+
+        <section class="booking-step" data-step="2">
+          <div class="step-title"><small>STEP 02</small><h3>Experience & Preferences</h3><p>Csak a kiválasztott Talent által elérhető opciók jelennek meg.</p></div>
+          <div class="form-block"><h4>Experience category</h4><div class="choice-grid" id="serviceChoices"></div></div>
+          <div class="form-block"><h4>Interaction level</h4><div class="choice-grid" id="interactionChoices"></div></div>
+          <div class="form-block"><h4>Guest configuration</h4><div class="choice-grid" id="guestChoices"></div></div>
+          <div class="form-block"><h4>Additional preferences</h4><div class="choice-grid compact" id="preferenceChoices"></div></div>
+          <label class="field full"><span>Részletes igény / elképzelés</span><textarea name="requestDetails" rows="5" placeholder="Írd le az estét, hangulatot, külön kéréseket, ruházatot, programot vagy bármit, amit fontos előre tudni..."></textarea></label>
+        </section>
+
+        <section class="booking-step" data-step="3">
+          <div class="step-title"><small>STEP 03</small><h3>Event Details</h3><p>Időpont, helyszín és eseményinformációk.</p></div>
+          <div class="form-grid">
+            <label class="field"><span>Dátum</span><input type="date" name="date" required></label>
+            <label class="field"><span>Kezdés</span><input type="time" name="time" required></label>
+            <label class="field"><span>Időtartam</span><select name="duration" required><option value="">Válassz</option><option>1 óra</option><option>2 óra</option><option>3 óra</option><option>4 óra</option><option>6 óra</option><option>Egész este</option><option>Overnight</option><option>Egyedi</option></select></label>
+            <label class="field"><span>Esemény típusa</span><select name="eventType" required><option value="">Válassz</option><option>Privát találkozó</option><option>Vacsora</option><option>Villa party</option><option>Penthouse</option><option>Casino</option><option>Yacht</option><option>Céges esemény</option><option>Klub / VIP esemény</option><option>Egyéb</option></select></label>
+            <label class="field full"><span>Helyszín / venue neve</span><input type="text" name="venueName" placeholder="pl. Diamond Casino Penthouse"></label>
+            <label class="field full"><span>Helyszín címe</span><input type="text" name="venueAddress" required placeholder="Los Santos-i cím / találkozási pont"></label>
+            <label class="field"><span>Költségkeret</span><select name="budget"><option>25 000 – 40 000 $</option><option>40 000 – 60 000 $</option><option>60 000 – 100 000 $</option><option>100 000 $+</option><option>Private quotation</option></select></label>
+            <label class="field"><span>Dress code</span><input type="text" name="dressCode" placeholder="Black tie, cocktail, themed..."></label>
+            <label class="field"><span>Transport</span><select name="transport"><option>Nem szükséges</option><option>EEE sofőr szükséges</option><option>Pickup szükséges</option><option>Egyedi egyeztetés</option></select></label>
+            <label class="field"><span>Security</span><select name="security"><option>Standard EEE</option><option>Fokozott security</option><option>Privát security már van</option><option>Egyedi egyeztetés</option></select></label>
+            <label class="field full"><span>Esemény leírása</span><textarea name="eventDescription" rows="5" placeholder="Kik lesznek jelen, milyen jellegű az este, különleges körülmények, dress code, program..."></textarea></label>
+          </div>
+        </section>
+
+        <section class="booking-step" data-step="4">
+          <div class="step-title"><small>STEP 04</small><h3>Client Information</h3><p>Az EEE a foglalás és security ellenőrzés miatt kéri ezeket az adatokat.</p></div>
+          <div class="form-grid">
+            <label class="field"><span>Teljes név</span><input type="text" name="clientName" required></label>
+            <label class="field"><span>Telefon / elérhetőség</span><input type="text" name="clientPhone" required></label>
+            <label class="field"><span>E-mail / egyéb kontakt</span><input type="text" name="clientEmail"></label>
+            <label class="field"><span>Ügyféltípus</span><select name="clientType" id="clientType"><option value="private">Private Client</option><option value="company">Company / Corporate</option></select></label>
+            <label class="field" data-private-address><span>Lakcím</span><input type="text" name="homeAddress" placeholder="Lakóhely / ellenőrzési cím"></label>
+            <label class="field" data-private-address><span>Alternatív cím</span><input type="text" name="alternateAddress" placeholder="Ha eltérő levelezési / kapcsolati cím van"></label>
+            <label class="field hidden" data-company-field><span>Cég neve</span><input type="text" name="companyName"></label>
+            <label class="field hidden" data-company-field><span>Cég címe</span><input type="text" name="companyAddress"></label>
+            <label class="field full hidden" data-company-field><span>Kapcsolattartó / pozíció</span><input type="text" name="companyContact"></label>
+            <label class="field full"><span>Azonosítási / security megjegyzés</span><textarea name="identityNotes" rows="3" placeholder="RP-ben használható azonosító, cég, ismert kapcsolat, külön security információ..."></textarea></label>
+            <label class="field full"><span>Egyéb megjegyzés az EEE részére</span><textarea name="clientNotes" rows="4"></textarea></label>
+          </div>
+        </section>
+
+        <section class="booking-step" data-step="5">
+          <div class="step-title"><small>STEP 05</small><h3>Review & Submit</h3><p>Ellenőrizd a kérést. A beküldés még nem jelent elfogadott foglalást.</p></div>
+          <div class="review-card" id="bookingReview"></div>
+          <label class="consent-row"><input type="checkbox" name="rulesAccepted" required><span>Elfogadom az EEE szabályzatát, és tudomásul veszem, hogy a Talent a kérést elfogadhatja, módosítást kérhet vagy elutasíthatja.</span></label>
+        </section>
+
+        <div class="booking-footer">
+          <button type="button" class="btn btn-outline" id="prevStep" disabled>Back</button>
+          <div class="booking-footer-right">
+            <button type="button" class="text-button" id="saveDraft">Save Draft</button>
+            <button type="button" class="btn btn-gold" id="nextStep">Continue</button>
+            <button type="submit" class="btn btn-gold" id="submitBooking" hidden>Submit Private Request</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <template id="orderTemplate">
+    <article class="order-card">
+      <div class="order-card-head"><div><small class="order-id"></small><h3 class="order-title"></h3></div><span class="status-pill"></span></div>
+      <div class="order-meta"></div>
+      <details><summary>Teljes megrendelés megnyitása</summary><div class="order-details"></div></details>
+      <div class="order-actions"><button class="text-button edit-order">Szerkesztés</button><button class="text-button danger delete-order">Törlés</button></div>
+    </article>
+  </template>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
