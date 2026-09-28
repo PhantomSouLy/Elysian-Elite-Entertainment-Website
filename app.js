@@ -52,8 +52,8 @@
       <div class="profile-copy">
         <p class="eyebrow">${esc(t.level)}</p><h2>${esc(t.name)}</h2>
         <p class="profile-desc">${esc(t.description)}</p>
-        <div class="profile-facts"><div><small>Availability</small>${esc(t.availability)}</div><div><small>Languages</small>${esc(t.languages.join(' / '))}</div><div><small>Booking Level</small>${esc(t.level)}</div><div><small>Security</small>EEE Protected</div></div>
-        <div class="service-preview"><h4>Service Preferences</h4>${rows}</div>
+        <div class="profile-facts"><div><small>Elérhetőség</small>${esc(t.availability)}</div><div><small>Nyelvek</small>${esc(t.languages.join(' / '))}</div><div><small>Foglalási szint</small>${esc(t.level)}</div><div><small>Védelem</small>EEE védelem alatt</div></div>
+        <div class="service-preview"><h4>Vállalt szolgáltatások</h4>${rows}</div>
         <button class="btn btn-gold" id="bookTalentDirect">${esc(t.name.split(' ')[0])} foglalása</button>
       </div></div>`;
     const modal = $('#talentModal'); modal.showModal();
@@ -77,11 +77,17 @@
   }
 
   function renderExperienceChoices(){
-    const t = getTalent(state.selectedTalent); if(!t) return;
-    $('#serviceChoices').innerHTML = Object.entries(t.services).map(([k,v])=>choiceMarkup('services',k,D.serviceLabels[k]||[k,''],v)).join('');
-    $('#interactionChoices').innerHTML = Object.entries(t.interactions).map(([k,v])=>choiceMarkup('interaction',k,D.interactionLabels[k]||[k,''],v,'radio')).join('');
-    $('#guestChoices').innerHTML = Object.entries(t.guests).map(([k,v])=>choiceMarkup('guestConfig',k,D.guestLabels[k]||[k,''],v,'radio')).join('');
-    $('#preferenceChoices').innerHTML = D.preferenceLabels.map(([k,l])=>`<label class="choice"><input type="checkbox" name="preferences" value="${k}"><strong>${esc(l)}</strong></label>`).join('');
+    const checkedTalent = $('input[name="talent"]:checked');
+    if(!state.selectedTalent && checkedTalent) state.selectedTalent = checkedTalent.value;
+    const t = getTalent(state.selectedTalent);
+    if(!t){
+      console.warn('EEE: nincs érvényes Talent kiválasztva a foglalás 2. lépéséhez.');
+      return;
+    }
+    $('#serviceChoices').innerHTML = Object.entries(t.services || {}).map(([k,v])=>choiceMarkup('services',k,D.serviceLabels[k]||[k,''],v)).join('');
+    $('#interactionChoices').innerHTML = Object.entries(t.interactions || {}).map(([k,v])=>choiceMarkup('interaction',k,D.interactionLabels[k]||[k,''],v,'radio')).join('');
+    $('#guestChoices').innerHTML = Object.entries(t.guests || {}).map(([k,v])=>choiceMarkup('guestConfig',k,D.guestLabels[k]||[k,''],v,'radio')).join('');
+    $('#preferenceChoices').innerHTML = (D.preferenceLabels || []).map(([k,l])=>`<label class="choice"><input type="checkbox" name="preferences" value="${k}"><strong>${esc(l)}</strong></label>`).join('');
   }
 
   function setStep(n){
