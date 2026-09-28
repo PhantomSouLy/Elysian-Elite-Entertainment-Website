@@ -8,8 +8,8 @@ window.EEE_DATA = {
       accent: 'rose',
       availability: 'Korlátozott',
       languages: ['Japán', 'Angol'],
-      description: 'Az Elysian Elite Entertainment egyik Talent tagja. Airi elegáns, játékos és magabiztos jelenléttel dolgozik; ugyanúgy illik egy exkluzív vacsorához vagy Vinewood-i eseményhez, mint egy személyesebb privát foglaláshoz. Minden szolgáltatás saját döntése és előzetes jóváhagyása alapján történik.',
-      tags: ['Elite', 'Társaság', 'Privát esemény', 'Tánc', '18+ kérésre'],
+      description: 'Az Elysian Elite Entertainment egyik Talent tagja. Airi elegáns, játékos és magabiztos jelenléttel dolgozik; ugyanúgy illik egy exkluzív vacsorához vagy Vinewood-i eseményhez, mint egy személyesebb privát foglaláshoz. Nem vállal erotikus vagy 18+ intim szolgáltatást; személyes határa maximum csókig terjed, és a csók is külön jóváhagyáshoz kötött.',
+      tags: ['Elite', 'Társaság', 'Privát esemény', 'Tánc', 'Maximum csókig'],
       services: {
         conversation_companion: 'available',
         social_companion: 'available',
@@ -20,10 +20,6 @@ window.EEE_DATA = {
         professional_dance: 'available',
         private_dance: 'available',
         themed_performance: 'request',
-        lingerie_performance: 'request',
-        nude_performance: 'request',
-        adult_private_companion: 'request',
-        private_intimacy: 'request',
         overnight_companion: 'request',
         special_request: 'available'
       },
@@ -32,9 +28,7 @@ window.EEE_DATA = {
         social_contact: 'available',
         hand_holding: 'available',
         hugging: 'available',
-        kissing: 'request',
-        intimate_contact: 'request',
-        private_intimacy: 'request'
+        kissing: 'request'
       },
       guests: {
         one_guest: 'available',
