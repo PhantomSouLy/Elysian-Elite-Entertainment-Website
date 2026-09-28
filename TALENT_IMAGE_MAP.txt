@@ -1,0 +1,16 @@
+EEE Talent image mapping
+
+Airi Shimizu      -> assets/5192012B-B59E-4FC2-979C-67986A93C4B5.png
+Livia Hartmann    -> assets/563280D4-DFB8-46C6-8B09-9FD06E6ED1A6.png
+Naomi Reyes       -> assets/584226EA-50F5-4C5A-A8C4-F82E4695D875.png
+Mila Laurent      -> assets/607600AE-0596-4FCA-BB85-2C4A0E192186.png
+Sienna Vale       -> assets/824AEE6F-8110-430B-941B-5E8DDFAA2919.png
+Yuna Mori         -> assets/84CCFB1D-C197-4B3C-B2BC-95030251C2FA.png
+Valentina Moretti -> assets/8CB218F7-EC62-4DB3-974A-4C22C9AAD0BF-1.png
+Nadia Volkova     -> assets/B0B8F6A5-0AAC-4F74-910A-43EC92D9E7EF.png
+Camille Duval     -> assets/F2051DC3-648F-464E-A6BE-4E6AC02D11A7.png
+
+IMPORTANT:
+The GitHub connector could list the PNG files but could not visually decode the repository images.
+If the pink-haired Airi image is not the first filename above, only swap the image: value
+between Airi and the profile that currently points at Airi's actual PNG. No other code changes are required.
