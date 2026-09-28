@@ -6,6 +6,7 @@ Privát RP weboldal a FiveM / Los Santos Paradise történethez.
 
 - Luxuskialakítású fekete / arany / fehér EEE weboldal
 - Főmenü, Kik vagyunk, Talent Hölgyek, Árak, Szabályzat, Elérhetőség
+- EEE Tagok belső menü: Személyi Testőrök + Talent Lányok handbook
 - Talent profilok külön szolgáltatási és személyes határ beállításokkal
 - Többlépcsős Private Booking Request
 - Részletes ügyfél- és cégadatok, lakcím / céges cím
@@ -54,3 +55,8 @@ Ha SouLy és Cherry ugyanazt a rendeléslistát akarja látni két külön gépr
 A repo lehet privát. Viszont a GitHub repo privátsága és a publikált weboldal hozzáférése nem ugyanaz a dolog: érzékeny vagy valódi személyes adatoknál ne kezeljétek a publikus statikus hosztolást valódi hozzáférés-védelemként.
 
 RP-adatoknál ez kevésbé kritikus, de közös online használathoz érdemes valódi belépést tenni elé.
+
+
+## EEE Tagok belső rész
+
+Az `EEE Tagok` menü RP szerint belső személyzeti felület. A projekt jelenlegi verziójában nincs valódi login vagy jogosultságkezelés, mert az oldalt zárt RP használatra terveztük.

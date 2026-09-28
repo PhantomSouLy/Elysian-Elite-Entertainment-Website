@@ -8,7 +8,7 @@ window.EEE_DATA = {
       accent: 'rose',
       availability: 'Limited',
       languages: ['Japanese', 'English'],
-      description: 'Az Elysian Elite Entertainment egyik kiemelt Elite Talentje. Airi elegáns, játékos és magabiztos jelenléttel dolgozik; ugyanúgy illik egy exkluzív vacsorához vagy Vinewood-i eseményhez, mint egy személyesebb privát foglaláshoz. Minden szolgáltatás saját döntése és előzetes jóváhagyása alapján történik.',
+      description: 'Az Elysian Elite Entertainment Elite Talent állományának tagja. Airi elegáns, játékos és magabiztos jelenléttel dolgozik; ugyanúgy illik egy exkluzív vacsorához vagy Vinewood-i eseményhez, mint egy személyesebb privát foglaláshoz. Minden szolgáltatás saját döntése és előzetes jóváhagyása alapján történik.',
       tags: ['Elite', 'Companion', 'Private Events', 'Dance', '18+ Request'],
       services: {
         conversation_companion: 'available',

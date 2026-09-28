@@ -1,0 +1,16 @@
+EEE WEBSITE UPDATE v3 — Internal Staff Area
+
+Overwrite these files in the repository root:
+- index.html
+- styles.css
+- data.js
+- README.md (optional but recommended)
+
+Do NOT delete your existing assets/ folder, logo.png or app.js.
+
+New menu:
+EEE Tagok > Személyi Testőrök
+EEE Tagok > Talent Lányok
+
+No login/auth was added by request. The pages are marked INTERNAL / STAFF ONLY only as RP presentation.
+Airi Shimizu has no special featured styling; she uses the same Talent card/profile system as everyone else.
